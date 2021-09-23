@@ -19,7 +19,7 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
-          alt={get(this, 'props.data.site.siteMetadata.title')}
+          alt={pageQuery.props.data.site.siteMetadata.title}
           style={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
@@ -28,7 +28,7 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Written by <strong>{get(this, 'props.data.site.siteMetadata.title')}</strong> who lives and works in San
+          Written by <strong>{pageQuery.props.data.site.siteMetadata.title}</strong> who lives and works in San
           Francisco building useful things.{' '}
           <a href="https://twitter.com/kylemathews">
             You should follow him on Twitter
@@ -38,15 +38,5 @@ class Bio extends React.Component {
     )
   }
 }
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
 
 export default Bio
