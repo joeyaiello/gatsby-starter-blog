@@ -1,4 +1,5 @@
 import React from 'react'
+import get from 'lodash/get'
 
 // Import typefaces
 import 'typeface-montserrat'
@@ -18,7 +19,7 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
-          alt={`Kyle Mathews`}
+          alt={pageQuery.props.data.site.siteMetadata.title}
           style={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
@@ -27,7 +28,7 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Written by <strong>Kyle Mathews</strong> who lives and works in San
+          Written by <strong>{pageQuery.props.data.site.siteMetadata.title}</strong> who lives and works in San
           Francisco building useful things.{' '}
           <a href="https://twitter.com/kylemathews">
             You should follow him on Twitter
